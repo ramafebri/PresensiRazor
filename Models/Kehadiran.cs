@@ -15,7 +15,11 @@ namespace AbsenMahasiswaRazor.Models
         string _waktu;
         public string waktu
         {
-            get { return DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"); }
+            get
+            {
+                return DateTime.Now.AddMinutes(420).ToString("MM/dd/yyyy HH:mm:ss");
+            }
+
             set { _waktu = value; }
         }
     }
