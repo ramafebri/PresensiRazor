@@ -8,6 +8,21 @@
     <link rel="stylesheet" href="~/css/site.css" />
 
     <script type="text/javascript">
+        function showDate() {
+
+            var month_names =["January","February","March",
+                      "April","May","June",
+                      "Jule","August","September",
+                "October", "November", "December"];
+            var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            var currentDate = new Date(),
+                hari = days[currentDate.getDay()],
+            day = currentDate.getDate(),
+            month = month_names[currentDate.getMonth() ],
+            year = currentDate.getFullYear();
+            document.getElementById('tanggal').innerHTML = hari + ", " + day + " " + month + " " + year;
+         }
+
         function showTime() {
             var a_p = "";
             var today = new Date();
@@ -27,6 +42,7 @@
             return i;
         }
         setInterval(showTime, 500);
+        setInterval(showDate, 500);
     </script>
 </head>
 <body style="background-image:url('https://free4kwallpapers.com/uploads/originals/2017/08/21/material-design-mountains-wallpaper.jpg'); background-size:cover">
