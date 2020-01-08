@@ -1,0 +1,36 @@
+﻿@page
+@model AbsenMahasiswaRazor.Pages.Absen.IndexModel
+@{
+    ViewData["Title"] = "Presensi";
+}
+
+@if (ViewData["success"] != null)
+{
+    <div class="alert alert-success">@ViewData["success"]</div>
+}
+
+<div class="container h-100 vh-50">
+    <div class="row align-items-center h-100 vh-50">
+        <div class="col-6 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">Presensi Mahasiswa Online</div>
+                <div class="card-body">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Model.nim" class="control-label">NIM</label>
+                    <input asp-for="Model.nim" class="form-control" placeholder="Masukkan NIM"/>
+                    <span asp-validation-for="Model.nim" class="text-danger"></span>
+                    </div>
+                    <input type="submit" value="Login" class="btn btn-info btn-block">
+                </form>
+            </div>
+            </div>
+            <div id="time"; style="font-size:50px; color:#fff; text-align: center"></div>
+        </div>
+    </div>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
